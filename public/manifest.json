@@ -1,8 +1,13 @@
 {
   "manifest_version": 3,
   "name": "Groover Mode",
-	"description": "Facilite sua prática musical no Youtube com uma ferramenta de contagem regressiva, mudança de tom e checkpoints salvos.",
   "version": "1.0",
+	"description": "Facilite sua prática musical no Youtube com uma ferramenta de contagem regressiva, mudança de tom e checkpoints salvos.",
+  "icons": {
+		"16": "icons/16.png",
+		"48": "icons/48.png",
+		"128": "icons/128.png"
+	},
   "permissions": [
     "storage", 
     "management",
