@@ -181,14 +181,14 @@ input:checked + .slider {
 
 input:checked + .slider:before {
   transform: translateX(20px);
-  background-color: var(--primary-color); /* Azul sólido na bolinha ativa */
+  background-color: var(--primary-color); 
 }
 
 .row-fields {
   display: flex;
   gap: 12px;
   margin-bottom: 12px;
-  border-bottom: 1px solid var(--border-color); /* Separação de blocos */
+  border-bottom: 1px solid var(--border-color); 
   padding-bottom: 12px;
 }
 
@@ -197,12 +197,11 @@ input:checked + .slider:before {
   margin-bottom: 0; 
 }
 
-/* Seletores estilo pílula (padrão atual do YouTube) */
 .mode-selector {
   display: flex;
   background: rgba(255, 255, 255, 0.06);
   border: none;
-  border-radius: 20px; /* Formato pílula */
+  border-radius: 20px;
   padding: 2px;
   height: 38px;
   box-sizing: border-box;
@@ -221,8 +220,8 @@ input:checked + .slider:before {
 }
 
 .mode-btn.active {
-  background: #fff; /* YouTube usa branco no botão ativo sobre fundo escuro */
-  color: #0f0f0f;      /* Texto preto para alto contraste */
+  background: #fff;
+  color: #0f0f0f;
 }
 
 input[type="number"] {
@@ -250,7 +249,7 @@ input[type="number"]:focus {
   justify-content: space-between;
   background: rgba(255, 255, 255, 0.06);
   border: none;
-  border-radius: 20px; /* Formato pílula */
+  border-radius: 20px;
   padding: 0 4px;
   height: 38px;
   box-sizing: border-box;
@@ -285,17 +284,13 @@ input[type="number"]:focus {
   font-variant-numeric: tabular-nums;
 }
 
-/* ==========================================
-   BOTÃO LIMPAR E FEEDBACKS (Botão tipo pílula cinza do YT)
-   ========================================== */
-
 #clearCheckpointsBtn {
   width: 100%; 
   height: 36px; 
   background: rgba(255, 255, 255, 0.1); 
   border: none;
   color: var(--text-main); 
-  border-radius: 18px; /* Formato pílula do botão secundário do YT */
+  border-radius: 18px;
   font-weight: 500; 
   font-size: 0.85rem;
   cursor: pointer; 
@@ -308,7 +303,7 @@ input[type="number"]:focus {
 
 .clear-feedback {
   font-size: 0.78rem;
-  color: #2ba640; /* Verde de confirmação sutil compatível */
+  color: #2ba640;
   text-align: center;
   margin-top: 6px;
   font-weight: 500;
