@@ -68,7 +68,7 @@ function setMode(mode) {
 }
 
 function changeTicks(delta) {
-  currentTicks = Math.max(1, Math.min(12, currentTicks + delta))
+  currentTicks = Math.max(1, Math.min(16, currentTicks + delta))
   if (ticksValueDisplay) ticksValueDisplay.textContent = currentTicks
   saveSettings()
 }

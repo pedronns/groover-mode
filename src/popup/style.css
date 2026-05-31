@@ -26,11 +26,78 @@ h1 {
   letter-spacing: -0.5px;
 }
 
-.description {
-  margin: 0 0 16px 0;
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.help-menu-container {
+  position: relative;
+  display: inline-block;
+}
+
+.help-icon-btn {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #2e2e33;
+  border: 1px solid #44444a;
   color: var(--text-muted);
-  font-size: 0.82rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.help-icon-btn:hover, 
+.help-icon-btn:focus {
+  background: var(--primary-color);
+  color: #ffffff;
+  border-color: var(--primary-hover);
+}
+
+.help-tooltip {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  width: 260px;
+  background: #1a1a1e;
+  border: 1px solid #2e2e33;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s;
+  pointer-events: none;
+}
+
+.help-menu-container:hover .help-tooltip,
+.help-icon-btn:focus + .help-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.help-tooltip p {
+  margin: 0 0 8px 0;
+  font-size: 0.78rem;
+  color: #e4e4e7;
   line-height: 1.4;
+}
+
+.help-tooltip p:last-child {
+  margin-bottom: 0;
 }
 
 kbd {
@@ -213,7 +280,6 @@ input[type="number"]:focus {
   font-variant-numeric: tabular-nums;
 }
 
-/* Estilização do Botão Limpar */
 #clearCheckpointsBtn {
   width: 100%; 
   height: 36px; 
@@ -231,10 +297,9 @@ input[type="number"]:focus {
   background: #3f3f46;
 }
 
-/* NOVO: Estilização do feedback visual abaixo do botão */
 .clear-feedback {
   font-size: 0.78rem;
-  color: #10b981; /* Verde idêntico ao seu ponto D */
+  color: #10b981; 
   text-align: center;
   margin-top: 6px;
   font-weight: 500;

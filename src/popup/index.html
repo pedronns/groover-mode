@@ -2,79 +2,82 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <title>Musician Mode</title>
+    <title>Groover Mode</title>
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <h1>Musician Mode</h1>
-    
-    <div class="description">
-      <p style="margin: 0 0 4px 0;"><kbd>Q</kbd> (Vídeo pausado): Inicia contagem regressiva.</p>
-      <p style="margin: 0 0 4px 0;"><kbd>E</kbd> / <kbd>R</kbd>: Altera os semitons.</p>
-      <p style="margin: 0 0 4px 0;"><kbd>Shift</kbd> + <kbd>A</kbd>, <kbd>S</kbd> ou <kbd>D</kbd>: Cria checkpoints.</p>
-      <p style="margin: 0;"><kbd>A</kbd>, <kbd>S</kbd> ou <kbd>D</kbd>: Ir aos checkpoints marcados.</p>
+    <div class="header-container">
+      <h1>Groover Mode</h1>
+      <div class="help-menu-container">
+        <button type="button" class="help-icon-btn" id="helpBtn">?</button>
+        <div class="help-tooltip">
+          <p><kbd>Q</kbd> (Vídeo pausado): Inicia contagem regressiva.</p>
+          <p><kbd>E</kbd> / <kbd>R</kbd>: Altera o tom da música.</p>
+          <p><kbd>Shift</kbd> + <kbd>A</kbd>, <kbd>S</kbd>, <kbd>D</kbd>: Cria checkpoints.</p>
+          <p><kbd>A</kbd>, <kbd>S</kbd>, <kbd>D</kbd>: Pula para o checkpoint.</p>
+        </div>
+      </div>
     </div>
-
-		
+    
     <div class="section form-group">
-			<label>Tipo de Contagem</label>
+      <label>Tipo de Contagem</label>
       <div class="mode-selector">
-				<button type="button" class="mode-btn active" id="modeSeconds">Segundos</button>
+        <button type="button" class="mode-btn active" id="modeSeconds">Segundos</button>
         <button type="button" class="mode-btn" id="modeBpm">BPM</button>
       </div>
     </div>
-		
+    
     <div class="row-fields">
-			<div class="section form-group">
-				<label>Ticks (Batidas)</label>
+      <div class="section form-group">
+        <label>Ticks (Batidas)</label>
         <div class="selector-container">
-					<button type="button" class="selector-btn" id="ticksMinus">−</button>
+          <button type="button" class="selector-btn" id="ticksMinus">−</button>
           <span class="selector-value" id="ticksValue">4</span>
           <button type="button" class="selector-btn" id="ticksPlus">+</button>
         </div>
       </div>
       
       <div class="section form-group" id="pitchFieldContainer">
-				<label>Semitons</label>
+        <label>Semitons</label>
         <div class="selector-container">
-					<button type="button" class="selector-btn" id="pitchMinus">−</button>
+          <button type="button" class="selector-btn" id="pitchMinus">−</button>
           <span class="selector-value" id="pitchValue">0</span>
           <button type="button" class="selector-btn" id="pitchPlus">+</button>
         </div>
       </div>
-			
+      
       <div class="section form-group hidden" id="bpmFieldContainer">
         <label for="bpmInput">Andamento (BPM)</label>
         <input id="bpmInput" type="number" min="30" max="300" value="120" />
       </div>
     </div>
-		
-		<div class="section">
-			<label class="switch-label">
-				<span>Contagem no checkpoint</span>
+    
+    <div class="section">
+      <label class="switch-label">
+        <span>Contagem no checkpoint</span>
         <div style="position: relative;">
-					<input type="checkbox" checked id="checkpointCountdownEnabled" />
+          <input type="checkbox" checked id="checkpointCountdownEnabled" />
           <span class="slider"></span>
         </div>
       </label>
-		</div>
+    </div>
 
-		<div class="section">
-			<label class="switch-label">
-				<span>Som da contagem</span>
-				<div style="position: relative;">
-					<input type="checkbox" checked id="soundEnabled" />
-					<span class="slider"></span>
-				</div>
-			</label>
-		</div>
-		
-		<div class="section" style="margin-top: 16px; position: relative;">
-			<button type="button" id="clearCheckpointsBtn">
-				Limpar Checkpoints
+    <div class="section">
+      <label class="switch-label">
+        <span>Som da contagem</span>
+        <div style="position: relative;">
+          <input type="checkbox" checked id="soundEnabled" />
+          <span class="slider"></span>
+        </div>
+      </label>
+    </div>
+    
+    <div class="section" style="margin-top: 16px; position: relative;">
+      <button type="button" id="clearCheckpointsBtn">
+        Limpar Checkpoints
       </button>
       <div id="clearFeedback" class="clear-feedback">Checkpoints limpos!</div>
-		</div>
+    </div>
 
     <script type="module" src="./script.js"></script>
   </body>
