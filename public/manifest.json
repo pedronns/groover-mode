@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Musician Mode",
+  "version": "1.0",
+  "permissions": [
+    "storage", 
+    "management",
+    "activeTab"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "src/popup/index.html"
+  }
+}
