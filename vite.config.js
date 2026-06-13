@@ -1,30 +1,28 @@
-import { defineConfig } from 'vite';
-import { resolve } from 'path';
+import { defineConfig } from 'vite'
+import { resolve } from 'path'
 
 export default defineConfig({
-  build: {
-    emptyOutDir: false, 
-    outDir: 'dist',
-    rollupOptions: {
-      input: {
-        // Ponto de entrada correto para o seu novo index.html
-        popup: resolve(__dirname, 'src/popup/index.html'),
-        content: resolve(__dirname, 'src/content.js'),
-        background: resolve(__dirname, 'background.js'),
-      },
-      output: {
-        // Mantém os nomes dos scripts limpos na raiz do dist/ (content.js, background.js)
-        entryFileNames: '[name].js',
-        chunkFileNames: '[name].js',
-        
-        // Organiza os assets. Se for o CSS do popup, ele joga na mesma estrutura
-        assetFileNames: (assetInfo) => {
-          if (assetInfo.name && assetInfo.name.endsWith('.css')) {
-            return 'src/popup/[name].[ext]';
-          }
-          return '[name].[ext]';
-        }
-      }
-    }
-  }
-});
+	build: {
+		emptyOutDir: false,
+		outDir: 'dist',
+		lib: {
+			entry: {
+				popup: resolve(__dirname, 'src/popup/index.html'),
+				background: resolve(__dirname, 'background.js'),
+			},
+			formats: ['es'],
+		},
+		rollupOptions: {
+			output: {
+				entryFileNames: '[name].js',
+				chunkFileNames: '[name].js',
+				assetFileNames: (assetInfo) => {
+					if (assetInfo.name && assetInfo.name.endsWith('.css')) {
+						return 'src/popup/[name].[ext]'
+					}
+					return '[name].[ext]'
+				},
+			},
+		},
+	},
+})
